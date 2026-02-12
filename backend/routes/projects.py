@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from models import Project, ProjectCreate, ProjectUpdate
 from typing import List, Optional
 from datetime import datetime
@@ -10,11 +10,12 @@ router = APIRouter(prefix="/projects", tags=["projects"])
 
 
 @router.get("", response_model=List[Project])
-async def get_projects(db, featured: Optional[bool] = None, limit: Optional[int] = None):
+async def get_projects(request: Request, featured: Optional[bool] = None, limit: Optional[int] = None):
     """
     Get all projects with optional filtering
     """
     try:
+        db = request.state.db
         query = {}
         if featured is not None:
             query["featured"] = featured
@@ -32,11 +33,12 @@ async def get_projects(db, featured: Optional[bool] = None, limit: Optional[int]
 
 
 @router.get("/{project_id}", response_model=Project)
-async def get_project(project_id: str, db):
+async def get_project(project_id: str, request: Request):
     """
     Get a specific project by ID
     """
     try:
+        db = request.state.db
         project = await db.projects.find_one({"id": project_id})
         if not project:
             raise HTTPException(status_code=404, detail="Project not found")
@@ -49,11 +51,12 @@ async def get_project(project_id: str, db):
 
 
 @router.post("", response_model=Project)
-async def create_project(project: ProjectCreate, db):
+async def create_project(project: ProjectCreate, request: Request):
     """
     Create a new project
     """
     try:
+        db = request.state.db
         project_obj = Project(**project.dict())
         await db.projects.insert_one(project_obj.dict())
         logger.info(f"Project created: {project_obj.id}")
@@ -64,11 +67,12 @@ async def create_project(project: ProjectCreate, db):
 
 
 @router.put("/{project_id}", response_model=Project)
-async def update_project(project_id: str, project_update: ProjectUpdate, db):
+async def update_project(project_id: str, project_update: ProjectUpdate, request: Request):
     """
     Update an existing project
     """
     try:
+        db = request.state.db
         existing_project = await db.projects.find_one({"id": project_id})
         if not existing_project:
             raise HTTPException(status_code=404, detail="Project not found")
@@ -92,11 +96,12 @@ async def update_project(project_id: str, project_update: ProjectUpdate, db):
 
 
 @router.delete("/{project_id}")
-async def delete_project(project_id: str, db):
+async def delete_project(project_id: str, request: Request):
     """
     Delete a project
     """
     try:
+        db = request.state.db
         result = await db.projects.delete_one({"id": project_id})
         if result.deleted_count == 0:
             raise HTTPException(status_code=404, detail="Project not found")
