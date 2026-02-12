@@ -40,6 +40,14 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+
+# Middleware to inject db into request state
+@app.middleware("http")
+async def db_session_middleware(request: Request, call_next):
+    request.state.db = db
+    response = await call_next(request)
+    return response
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
