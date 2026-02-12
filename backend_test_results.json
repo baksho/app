@@ -1,0 +1,162 @@
+[
+  {
+    "test": "Root Endpoint",
+    "success": true,
+    "details": "Returned correct message: ML/DL Portfolio API - Running",
+    "timestamp": "2026-02-12T20:09:40.054326",
+    "response_data": {
+      "message": "ML/DL Portfolio API - Running"
+    }
+  },
+  {
+    "test": "Projects Get All",
+    "success": true,
+    "details": "Retrieved 3 projects with correct structure",
+    "timestamp": "2026-02-12T20:09:40.127468",
+    "response_data": {
+      "count": 3,
+      "sample": {
+        "id": "proj-1",
+        "title": "Neural Style Transfer for Video",
+        "description": "Developed a real-time neural style transfer system that applies artistic styles to video streams using deep convolutional neural networks. Optimized for GPU acceleration and achieved 30 FPS processing speed.",
+        "technologies": [
+          "PyTorch",
+          "CUDA",
+          "OpenCV",
+          "Flask"
+        ],
+        "image": "https://images.unsplash.com/photo-1762279389083-abf71f22d338?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtYWNoaW5lJTIwbGVhcm5pbmclMjB2aXN1YWxpemF0aW9ufGVufDB8fHx8MTc3MDkyNDQ2OHww&ixlib=rb-4.1.0&q=85",
+        "github": "https://github.com/yourusername/neural-style-transfer",
+        "demo": "https://demo-link.com",
+        "featured": true,
+        "created_at": "2024-01-15T00:00:00",
+        "updated_at": "2024-01-15T00:00:00"
+      }
+    }
+  },
+  {
+    "test": "Projects Featured Filter",
+    "success": true,
+    "details": "Retrieved 3 featured projects",
+    "timestamp": "2026-02-12T20:09:40.197828",
+    "response_data": {
+      "count": 3
+    }
+  },
+  {
+    "test": "Projects Featured Limit",
+    "success": true,
+    "details": "Retrieved 2 featured projects (limit 2)",
+    "timestamp": "2026-02-12T20:09:40.270181",
+    "response_data": {
+      "count": 2
+    }
+  },
+  {
+    "test": "Projects Create",
+    "success": true,
+    "details": "Created project with ID: 7458a32c-e1f7-4eff-b8f5-cbcb55e6ecb1",
+    "timestamp": "2026-02-12T20:09:40.340286",
+    "response_data": {
+      "id": "7458a32c-e1f7-4eff-b8f5-cbcb55e6ecb1",
+      "title": "Test Project",
+      "description": "Test Description",
+      "technologies": [
+        "Test"
+      ],
+      "image": "http://test.com/img.jpg",
+      "github": null,
+      "demo": null,
+      "featured": false,
+      "created_at": "2026-02-12T20:09:40.334777",
+      "updated_at": "2026-02-12T20:09:40.334780"
+    }
+  },
+  {
+    "test": "Projects Verify Created",
+    "success": true,
+    "details": "Created project found in projects list",
+    "timestamp": "2026-02-12T20:09:40.413512",
+    "response_data": {
+      "id": "7458a32c-e1f7-4eff-b8f5-cbcb55e6ecb1",
+      "title": "Test Project",
+      "description": "Test Description",
+      "technologies": [
+        "Test"
+      ],
+      "image": "http://test.com/img.jpg",
+      "github": null,
+      "demo": null,
+      "featured": false,
+      "created_at": "2026-02-12T20:09:40.334000",
+      "updated_at": "2026-02-12T20:09:40.334000"
+    }
+  },
+  {
+    "test": "Blogs Get All",
+    "success": true,
+    "details": "Retrieved 3 blogs with correct structure",
+    "timestamp": "2026-02-12T20:09:40.479755",
+    "response_data": {
+      "count": 3,
+      "sample": {
+        "id": "mock-1",
+        "title": "Understanding Transformer Architecture: A Deep Dive",
+        "excerpt": "An in-depth exploration of the transformer architecture, covering attention mechanisms, positional encoding, and practical implementation tips for NLP tasks.",
+        "date": "2024-01-15T00:00:00",
+        "read_time": "12 min read",
+        "tags": [
+          "Deep Learning",
+          "NLP",
+          "Transformers"
+        ],
+        "url": "https://medium.com/@yourusername/understanding-transformer-architecture",
+        "image": "https://images.unsplash.com/photo-1653179241553-891d33f05410?crop=entropy&cs=srgb&fm=jpg&q=85"
+      }
+    }
+  },
+  {
+    "test": "Blogs Limit",
+    "success": true,
+    "details": "Retrieved 2 blogs (limit 2)",
+    "timestamp": "2026-02-12T20:09:40.548578",
+    "response_data": {
+      "count": 2
+    }
+  },
+  {
+    "test": "Contact Create",
+    "success": true,
+    "details": "Created contact message with ID: 850a1cb5-f392-4b89-81b4-41e36b6c61d3",
+    "timestamp": "2026-02-12T20:09:40.619855",
+    "response_data": {
+      "id": "850a1cb5-f392-4b89-81b4-41e36b6c61d3",
+      "name": "Test User",
+      "email": "test@example.com",
+      "subject": "Test Subject",
+      "message": "Test message content",
+      "created_at": "2026-02-12T20:09:40.613744",
+      "read": false
+    }
+  },
+  {
+    "test": "Contact Get All",
+    "success": true,
+    "details": "Retrieved 2 messages, including created test message",
+    "timestamp": "2026-02-12T20:09:40.687371",
+    "response_data": {
+      "count": 2,
+      "found_test_message": true
+    }
+  },
+  {
+    "test": "Resume Exists Check",
+    "success": true,
+    "details": "Resume exists: False",
+    "timestamp": "2026-02-12T20:09:40.753346",
+    "response_data": {
+      "exists": false,
+      "path": null
+    }
+  }
+]
