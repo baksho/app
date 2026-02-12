@@ -56,7 +56,7 @@ const Header = () => {
           }}>
             Experience
           </button>
-          <button onClick={() => scrollToSection('projects')} className="label-small" style={{
+          <button onClick={() => navigate('/projects')} className="label-small" style={{
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
@@ -64,7 +64,7 @@ const Header = () => {
           }}>
             Projects
           </button>
-          <button onClick={() => scrollToSection('blogs')} className="label-small" style={{
+          <button onClick={() => navigate('/blogs')} className="label-small" style={{
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
