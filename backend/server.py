@@ -77,6 +77,30 @@ async def get_status_checks():
     
     return status_checks
 
+
+# Include feature routers
+def get_db(request: Request):
+    return request.state.db
+
+# Modify routes to accept db parameter
+from functools import wraps
+
+def inject_db(func):
+    @wraps(func)
+    async def wrapper(*args, **kwargs):
+        from fastapi import Request
+        request = kwargs.get('request')
+        if request:
+            kwargs['db'] = request.state.db
+        return await func(*args, **kwargs)
+    return wrapper
+
+# Include routers
+api_router.include_router(contact.router)
+api_router.include_router(projects.router)
+api_router.include_router(blogs.router)
+api_router.include_router(resume.router)
+
 # Include the router in the main app
 app.include_router(api_router)
 
