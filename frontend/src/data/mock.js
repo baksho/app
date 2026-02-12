@@ -1,19 +1,19 @@
 // Mock data for ML/DL Portfolio
 
 export const personalInfo = {
-  name: "Your Name",
+  name: "Suvinava Basak",
   title: "Machine Learning Engineer",
   tagline: "Specializing in Deep Learning & AI Solutions",
   bio: "Passionate Machine Learning Engineer with expertise in developing and deploying deep learning models. Experienced in computer vision, natural language processing, and building scalable AI solutions. Committed to pushing the boundaries of artificial intelligence to solve real-world problems.",
   email: "your.email@example.com",
-  location: "Your Location",
+  location: "Braunschweig, DE",
   image: "https://images.unsplash.com/photo-1618593706014-06782cd3bb3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWNoJTIwaGVhZHNob3R8ZW58MHx8fHwxNzcwOTI0NDU4fDA&ixlib=rb-4.1.0&q=85",
   resume: "/resume.pdf",
   social: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
+    github: "https://github.com/baksho",
+    linkedin: "https://linkedin.com/in/suvinava-basak",
     medium: "https://medium.com/@yourusername",
-    twitter: "https://twitter.com/yourusername"
+    twitter: "https://x.com/time_scribbler"
   }
 };
 
