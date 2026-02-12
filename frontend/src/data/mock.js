@@ -8,7 +8,7 @@ export const personalInfo = {
   email: "suvinava.basak@outlook.com",
   location: "Braunschweig, DE",
   image: "https://images.unsplash.com/photo-1618593706014-06782cd3bb3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWNoJTIwaGVhZHNob3R8ZW58MHx8fHwxNzcwOTI0NDU4fDA&ixlib=rb-4.1.0&q=85",
-  resume: "/resume.pdf",
+  resume: "/backend/static/uploads/resume.pdf",
   social: {
     github: "https://github.com/baksho",
     linkedin: "https://linkedin.com/in/suvinava-basak",
