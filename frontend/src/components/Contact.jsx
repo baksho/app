@@ -24,17 +24,21 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitError('');
 
-    // Mock submission - will be replaced with actual API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      const response = await axios.post(`${API}/contact`, formData);
+      console.log('Form submitted successfully:', response.data);
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
       setTimeout(() => {
         setSubmitSuccess(false);
-      }, 3000);
-    }, 1000);
+      }, 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+      setSubmitError(error.response?.data?.detail || 'Failed to send message. Please try again.');
+    }
   };
 
   return (
