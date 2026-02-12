@@ -5,7 +5,7 @@ export const personalInfo = {
   title: "Machine Learning Engineer",
   tagline: "Specializing in Deep Learning & AI Solutions",
   bio: "Passionate Machine Learning Engineer with expertise in developing and deploying deep learning models. Experienced in computer vision, natural language processing, and building scalable AI solutions. Committed to pushing the boundaries of artificial intelligence to solve real-world problems.",
-  email: "your.email@example.com",
+  email: "suvinava.basak@outlook.com",
   location: "Braunschweig, DE",
   image: "https://images.unsplash.com/photo-1618593706014-06782cd3bb3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWNoJTIwaGVhZHNob3R8ZW58MHx8fHwxNzcwOTI0NDU4fDA&ixlib=rb-4.1.0&q=85",
   resume: "/resume.pdf",
@@ -19,8 +19,8 @@ export const personalInfo = {
 
 export const skills = [
   "Python", "TensorFlow", "PyTorch", "Scikit-learn",
-  "Deep Learning", "Computer Vision", "NLP", "MLOps",
-  "AWS", "Docker", "Kubernetes", "Git",
+  "Deep Learning", "Computer Vision", "NLP",
+  "AWS", "Docker", "Git", "Data Visualization",
   "Data Analysis", "Model Deployment", "Neural Networks", "Transformers"
 ];
 
