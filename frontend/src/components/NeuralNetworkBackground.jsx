@@ -47,7 +47,7 @@ const NeuralNetworkBackground = () => {
     }
 
     // Create particles (fewer for better performance)
-    const particleCount = Math.min(500, Math.floor((canvas.width * canvas.height) / 15000));
+    const particleCount = Math.min(1000, Math.floor((canvas.width * canvas.height) / 15000));
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
@@ -69,11 +69,11 @@ const NeuralNetworkBackground = () => {
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 80) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            const opacity = (1 - distance / 150) * 0.45;
+            const opacity = (1 - distance / 150) * 0.65;
             ctx.strokeStyle = `rgba(35, 35, 35, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
