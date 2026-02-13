@@ -52,9 +52,12 @@ export const experiences = [
       "Collaborated with cross-functional teams to integrate ML solutions",
       "Achieved 95% model accuracy on production datasets"
     ]
-  },
+  }
+];
+
+export const education = [
   {
-    id: "exp-3",
+    id: "edu-1",
     title: "Master of Science in Computer Science",
     company: "University Name",
     location: "City, Country",
@@ -65,6 +68,20 @@ export const experiences = [
       "Thesis: Advanced Deep Learning Architectures for Image Recognition",
       "GPA: 3.9/4.0",
       "Teaching Assistant for Machine Learning course"
+    ]
+  },
+  {
+    id: "edu-2",
+    title: "Bachelor of Technology in Computer Science",
+    company: "Institute Name",
+    location: "City, Country",
+    period: "2014 - 2018",
+    type: "education",
+    description: [
+      "Major in Computer Science and Engineering",
+      "Relevant coursework: Data Structures, Algorithms, Machine Learning, AI",
+      "Final year project: Predictive Analytics using Deep Learning",
+      "Dean's List holder for 3 consecutive years"
     ]
   }
 ];
