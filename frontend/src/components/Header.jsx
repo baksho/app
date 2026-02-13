@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, FileText } from 'lucide-react';
+import { Menu, X, Github, Linkedin, FileText, Mail } from 'lucide-react';
 import { personalInfo } from '../data/mock';
 
 const Header = () => {
