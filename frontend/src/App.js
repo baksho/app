@@ -13,6 +13,7 @@ import Publications from "./components/Publications";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import NeuralNetworkBackground from "./components/NeuralNetworkBackground";
 import AllProjects from "./pages/AllProjects";
 import ProjectDetail from "./pages/ProjectDetail";
 import AllPublications from "./pages/AllPublications";
