@@ -41,7 +41,7 @@ const NeuralNetworkBackground = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(35, 35, 35, 0.3)';
+        ctx.fillStyle = 'rgba(35, 35, 35, 0.5)';
         ctx.fill();
       }
     }
