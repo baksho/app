@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { experiences } from '../data/mock';
 
 const Experience = () => {
@@ -10,7 +10,7 @@ const Experience = () => {
     }}>
       <div className="container">
         <div className="label" style={{ marginBottom: '48px' }}>
-          Experience & Education
+          Experience
         </div>
 
         <div className="title-big" style={{
@@ -45,11 +45,7 @@ const Experience = () => {
                 justifyContent: 'center',
                 flexShrink: 0
               }}>
-                {exp.type === 'work' ? (
-                  <Briefcase size={24} color="var(--accent-primary)" />
-                ) : (
-                  <GraduationCap size={24} color="var(--accent-primary)" />
-                )}
+                <Briefcase size={24} color="var(--accent-primary)" />
               </div>
 
               <div>
