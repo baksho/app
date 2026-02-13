@@ -97,6 +97,14 @@ const Header = () => {
           }}>
             Projects
           </button>
+          <button onClick={() => navigate('/publications')} className="label-small" style={{
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'opacity 0.15s ease'
+          }}>
+            Publications
+          </button>
           <button onClick={() => navigate('/blogs')} className="label-small" style={{
             background: 'transparent',
             border: 'none',
