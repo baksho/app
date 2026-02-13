@@ -109,6 +109,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          <Route path="/publications" element={<PublicationsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
         </Routes>
       </BrowserRouter>
