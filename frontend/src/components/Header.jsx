@@ -45,7 +45,17 @@ const Header = () => {
         alignItems: 'center'
       }}>
         {/* Logo */}
-        <div className="header-logo" style={{ cursor: 'pointer' }} onClick={() => scrollToSection('hero')}>
+        <div 
+          className="header-logo" 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => {
+            if (window.location.pathname !== '/') {
+              navigate('/');
+            } else {
+              scrollToSection('hero');
+            }
+          }}
+        >
           ML/DL
         </div>
 
