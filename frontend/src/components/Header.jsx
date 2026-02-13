@@ -219,6 +219,15 @@ const Header = () => {
           }}>
             Projects
           </button>
+          <button onClick={() => { navigate('/publications'); setMobileMenuOpen(false); }} className="label-small" style={{
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            textAlign: 'left',
+            padding: '8px 0'
+          }}>
+            Publications
+          </button>
           <button onClick={() => { navigate('/blogs'); setMobileMenuOpen(false); }} className="label-small" style={{
             background: 'transparent',
             border: 'none',
