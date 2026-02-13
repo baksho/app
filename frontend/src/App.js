@@ -48,6 +48,7 @@ const Home = () => {
         <Experience />
         <Education />
         <Projects />
+        <Publications />
         <Blogs />
         <Contact />
       </main>
