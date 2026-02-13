@@ -10,6 +10,7 @@ const NeuralNetworkBackground = () => {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let particles = [];
+    let mouse = { x: null, y: null, radius: 150 };
 
     // Set canvas size
     const resizeCanvas = () => {
@@ -19,6 +20,21 @@ const NeuralNetworkBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    // Mouse move event
+    const handleMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    // Mouse leave event
+    const handleMouseLeave = () => {
+      mouse.x = null;
+      mouse.y = null;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
+
     // Particle class
     class Particle {
       constructor() {
@@ -26,7 +42,9 @@ const NeuralNetworkBackground = () => {
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 0.3;
         this.vy = (Math.random() - 0.5) * 0.3;
-        this.radius = 4;
+        this.radius = 2;
+        this.baseOpacity = 0.3;
+        this.activated = false;
       }
 
       update() {
@@ -36,18 +54,40 @@ const NeuralNetworkBackground = () => {
         // Bounce off edges
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+        // Check if near mouse (Neural Activation)
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          this.activated = distance < mouse.radius;
+        } else {
+          this.activated = false;
+        }
       }
 
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(35, 35, 35, 0.5)';
+        
+        // Neural activation: glow green when near cursor
+        if (this.activated) {
+          ctx.fillStyle = 'rgba(56, 255, 98, 0.8)'; // Neon green with high opacity
+          // Add glow effect
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = 'rgba(56, 255, 98, 0.8)';
+        } else {
+          ctx.fillStyle = 'rgba(35, 35, 35, 0.3)';
+          ctx.shadowBlur = 0;
+        }
+        
         ctx.fill();
       }
     }
 
     // Create particles (fewer for better performance)
-    const particleCount = Math.min(1000, Math.floor((canvas.width * canvas.height) / 15000));
+    const particleCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 15000));
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
@@ -69,13 +109,35 @@ const NeuralNetworkBackground = () => {
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 80) {
+          if (distance < 150) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            const opacity = (1 - distance / 150) * 0.65;
-            ctx.strokeStyle = `rgba(35, 35, 35, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            
+            let opacity = (1 - distance / 150) * 0.15;
+            let lineColor = 'rgba(35, 35, 35, ';
+            let lineWidth = 0.5;
+            
+            // Neural activation: brighten connections when both particles are activated
+            if (p1.activated && p2.activated) {
+              opacity = (1 - distance / 150) * 0.6; // Much brighter
+              lineColor = 'rgba(56, 255, 98, '; // Neon green
+              lineWidth = 1.5; // Thicker line
+              ctx.shadowBlur = 5;
+              ctx.shadowColor = 'rgba(56, 255, 98, 0.5)';
+            } else if (p1.activated || p2.activated) {
+              // One particle activated: partial activation
+              opacity = (1 - distance / 150) * 0.3;
+              lineColor = 'rgba(56, 255, 98, ';
+              lineWidth = 1;
+              ctx.shadowBlur = 2;
+              ctx.shadowColor = 'rgba(56, 255, 98, 0.3)';
+            } else {
+              ctx.shadowBlur = 0;
+            }
+            
+            ctx.strokeStyle = `${lineColor}${opacity})`;
+            ctx.lineWidth = lineWidth;
             ctx.stroke();
           }
         });
@@ -89,6 +151,8 @@ const NeuralNetworkBackground = () => {
     // Cleanup
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
