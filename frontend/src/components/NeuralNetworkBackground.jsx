@@ -26,7 +26,7 @@ const NeuralNetworkBackground = () => {
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 0.3;
         this.vy = (Math.random() - 0.5) * 0.3;
-        this.radius = 2;
+        this.radius = 4;
       }
 
       update() {
