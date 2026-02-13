@@ -56,7 +56,7 @@ const Header = () => {
             }
           }}
         >
-          ML/DL
+          SB
         </div>
 
         {/* Desktop Navigation */}

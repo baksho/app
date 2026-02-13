@@ -151,3 +151,45 @@ export const blogs = [
     image: "https://images.unsplash.com/photo-1759661990336-51bd4b951fea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmclMjB2aXN1YWxpemF0aW9ufGVufDB8fHx8MTc3MDkyNDQ2OHww&ixlib=rb-4.1.0&q=85"
   }
 ];
+
+export const publications = [
+  {
+    id: "pub-1",
+    title: "Deep Learning Architectures for Medical Image Segmentation",
+    authors: "Your Name, Co-Author Name, Another Author",
+    venue: "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+    year: "2024",
+    type: "Conference",
+    url: "https://arxiv.org/example-link",
+    abstract: "This paper presents novel deep learning architectures for automated medical image segmentation. We propose a U-Net variant that achieves state-of-the-art performance on multiple benchmark datasets.",
+    featured: true,
+    citations: 45,
+    pdf: "https://arxiv.org/pdf/example.pdf"
+  },
+  {
+    id: "pub-2",
+    title: "Attention Mechanisms in Natural Language Processing: A Survey",
+    authors: "Your Name, Research Team",
+    venue: "Journal of Machine Learning Research (JMLR)",
+    year: "2023",
+    type: "Journal",
+    url: "https://jmlr.org/example-link",
+    abstract: "A comprehensive survey of attention mechanisms in NLP, covering transformer architectures, self-attention variants, and recent advancements in efficient attention for large language models.",
+    featured: true,
+    citations: 128,
+    pdf: "https://jmlr.org/papers/example.pdf"
+  },
+  {
+    id: "pub-3",
+    title: "Efficient Neural Architecture Search for Edge Devices",
+    authors: "Your Name, Engineering Team",
+    venue: "International Conference on Machine Learning (ICML)",
+    year: "2023",
+    type: "Conference",
+    url: "https://proceedings.mlr.press/example",
+    abstract: "We introduce an efficient neural architecture search method specifically designed for resource-constrained edge devices, achieving significant improvements in inference speed while maintaining accuracy.",
+    featured: true,
+    citations: 32,
+    pdf: "https://proceedings.mlr.press/example.pdf"
+  }
+];
