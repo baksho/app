@@ -13,8 +13,6 @@ const AllPublications = () => {
 
   return (
     <div style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
-      <div className="grid-background" />
-      
       <div className="container">
         <button
           onClick={() => navigate('/')}
