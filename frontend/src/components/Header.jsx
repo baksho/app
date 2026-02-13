@@ -193,6 +193,15 @@ const Header = () => {
           }}>
             Experience
           </button>
+          <button onClick={() => scrollToSection('education')} className="label-small" style={{
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            textAlign: 'left',
+            padding: '8px 0'
+          }}>
+            Education
+          </button>
           <button onClick={() => { navigate('/projects'); setMobileMenuOpen(false); }} className="label-small" style={{
             background: 'transparent',
             border: 'none',
