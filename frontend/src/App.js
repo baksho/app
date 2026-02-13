@@ -38,8 +38,8 @@ const Home = () => {
 
   return (
     <div>
-      {/* Grid Background */}
-      <div className="grid-background" />
+      {/* Neural Network Background */}
+      <NeuralNetworkBackground />
       
       {/* Main Content */}
       <Header />
