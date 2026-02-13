@@ -61,7 +61,7 @@ const Home = () => {
 const ProjectsPage = () => {
   return (
     <div>
-      <div className="grid-background" />
+      <NeuralNetworkBackground />
       <Header />
       <AllProjects />
       <Footer />
@@ -72,7 +72,7 @@ const ProjectsPage = () => {
 const ProjectDetailPage = () => {
   return (
     <div>
-      <div className="grid-background" />
+      <NeuralNetworkBackground />
       <Header />
       <ProjectDetail />
       <Footer />
@@ -83,7 +83,7 @@ const ProjectDetailPage = () => {
 const PublicationsPage = () => {
   return (
     <div>
-      <div className="grid-background" />
+      <NeuralNetworkBackground />
       <Header />
       <AllPublications />
       <Footer />
@@ -94,7 +94,7 @@ const PublicationsPage = () => {
 const BlogsPage = () => {
   return (
     <div>
-      <div className="grid-background" />
+      <NeuralNetworkBackground />
       <Header />
       <AllBlogs />
       <Footer />
