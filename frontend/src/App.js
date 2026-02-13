@@ -9,11 +9,13 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Publications from "./components/Publications";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AllProjects from "./pages/AllProjects";
 import ProjectDetail from "./pages/ProjectDetail";
+import AllPublications from "./pages/AllPublications";
 import AllBlogs from "./pages/AllBlogs";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
