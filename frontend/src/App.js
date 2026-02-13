@@ -79,6 +79,17 @@ const ProjectDetailPage = () => {
   );
 };
 
+const PublicationsPage = () => {
+  return (
+    <div>
+      <div className="grid-background" />
+      <Header />
+      <AllPublications />
+      <Footer />
+    </div>
+  );
+};
+
 const BlogsPage = () => {
   return (
     <div>
