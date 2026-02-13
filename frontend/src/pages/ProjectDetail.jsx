@@ -34,7 +34,6 @@ const ProjectDetail = () => {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="grid-background" />
         <p className="text-body">Loading project...</p>
       </div>
     );
@@ -43,7 +42,6 @@ const ProjectDetail = () => {
   if (error || !project) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="grid-background" />
         <div style={{ textAlign: 'center' }}>
           <p className="text-body" style={{ color: 'var(--color-error)', marginBottom: '24px' }}>{error}</p>
           <button onClick={() => navigate('/projects')} className="btn-primary">
@@ -56,8 +54,6 @@ const ProjectDetail = () => {
 
   return (
     <div style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
-      <div className="grid-background" />
-      
       <div className="container">
         <button
           onClick={() => navigate('/projects')}
